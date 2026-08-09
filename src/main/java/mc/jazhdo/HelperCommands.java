@@ -22,7 +22,7 @@ import net.kyori.adventure.text.event.HoverEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 
-@Plugin(id = "helper-commands", name = "HelperCommands", version = "0.1.4")
+@Plugin(id = "helper-commands", name = "HelperCommands", version = "0.1.5")
 public class HelperCommands {
     private final ProxyServer proxy;
     private final Logger logger;
@@ -45,10 +45,10 @@ public class HelperCommands {
             "1block", "island", "one",
             "creative", "create", "build",
             "survival", "live", "1.12",
-            "events", "games", "fun",
+            "minigames", "games", "fun",
             "new-survival", "survive", "1.21"
         );
-        List<String> servers = List.of("lobby", "oneblock", "creative", "survival", "events", "new-survival");
+        List<String> servers = List.of("lobby", "oneblock", "creative", "survival", "minigames", "new-survival");
         for (int i = 0; i < 6; i++)
             for (String command : cmds.subList(i*3, (i*3)+3))
                 cm.register(cm.metaBuilder(command).build(), new ServerCommand(proxy, servers.get(i), logger));
